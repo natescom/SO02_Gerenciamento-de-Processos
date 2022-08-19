@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <center>
+      <HBox prefHeight="386.0" prefWidth="600.0" style="-fx-background-color: #9f9f9f24;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="1.0" top="1.0" />
+         </BorderPane.margin>
+         <TitledPane fx:id="tp_inicia" alignment="TOP_CENTER" collapsible="false" prefHeight="400.0" prefWidth="200.0" text="Inicializando">
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox fx:id="vbox_inicia" alignment="TOP_CENTER" minWidth="-Infinity" spacing="2.0">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+         </TitledPane>
+         <TitledPane alignment="TOP_CENTER" collapsible="false" prefHeight="400.0" prefWidth="200.0" text="Pronto">
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox fx:id="vbox_pronto" alignment="TOP_CENTER" spacing="2.0">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+         </TitledPane>
+         <TitledPane alignment="TOP_CENTER" collapsible="false" prefHeight="400.0" prefWidth="200.0" text="Executando">
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox fx:id="vbox_execu" alignment="TOP_CENTER" spacing="2.0">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+         </TitledPane>
+         <TitledPane alignment="TOP_CENTER" collapsible="false" prefHeight="400.0" prefWidth="200.0" text="Bloqueado">
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox fx:id="vbox_bloq" alignment="TOP_CENTER" spacing="2.0">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+         </TitledPane>
+         <TitledPane alignment="TOP_CENTER" collapsible="false" prefHeight="400.0" prefWidth="200.0" text="Finalizado">
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox fx:id="vbox_final" alignment="TOP_CENTER" spacing="2.0">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+         </TitledPane>
+      </HBox>
+   </center>
+   <right>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <VBox prefHeight="339.0" prefWidth="175.0">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <Label alignment="CENTER" prefHeight="17.0" prefWidth="167.0" text="Novo Processo">
+                  <VBox.margin>
+                     <Insets bottom="5.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+               <Label text="Tempo de Execucao">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Slider fx:id="sld_tempodeexec" blockIncrement="0.0" disable="true" majorTickUnit="1.0" max="10.0" min="1.0" showTickLabels="true" showTickMarks="true" />
+               <Label text="Prioridade">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </Label>
+               <Slider fx:id="sld_prioridade" disable="true" majorTickUnit="1.0" max="5.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" />
+               <HBox alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="165.0">
+                  <CheckBox fx:id="check_auto" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="17.0" selected="true" text="Auto" textAlignment="RIGHT" />
+               </HBox>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="38.0" prefWidth="175.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+               <HBox alignment="CENTER" spacing="5.0">
+                  <Button fx:id="btn_criar" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Criar" />
+               </HBox>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </right>
+   <left>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <Label text="Escalonamento:" />
+               <MenuButton fx:id="cbx_escal" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Fifo">
+                  <items>
+                     <CheckMenuItem fx:id="menuItem_Fifo" mnemonicParsing="false" selected="true" text="Fifo" />
+                     <CheckMenuItem fx:id="menuItem_Garan" mnemonicParsing="false" text="Prioridade" />
+                     <CheckMenuItem fx:id="menuItem_SJF" mnemonicParsing="false" text="Shortest Job First" />
+                     <CheckMenuItem fx:id="menuItem_Prio" disable="true" mnemonicParsing="false" text="Garantido" />
+                     <CheckMenuItem disable="true" mnemonicParsing="false" text="Multiplas Filas" />
+                     <CheckMenuItem disable="true" mnemonicParsing="false" text="Round Robin" />
+                  </items>
+               </MenuButton>
+               <Label text="Time Slicing">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Slider fx:id="sld_slicing" majorTickUnit="1.0" max="5.0" min="1.0" value="1.0" />
+            </VBox>
+         </top>
+         <bottom>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="44.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+               <Label text="Controles" />
+               <HBox alignment="CENTER" spacing="5.0">
+                  <Button fx:id="btn_iniciar" disable="true" mnemonicParsing="false" style="-fx-background-color: lightgreen; -fx-border-color: green; -fx-border-radius: 90; -fx-background-radius: 90;" text="Iniciar" />
+                  <Button fx:id="btn_parar" disable="true" mnemonicParsing="false" style="-fx-background-color: red; -fx-border-color: darkred; -fx-border-radius: 90; -fx-background-radius: 90;" text="Parar" />
+                  <Button fx:id="btn_limpar" disable="true" mnemonicParsing="false" style="-fx-background-color: lightblue; -fx-background-radius: 90; -fx-border-color: darkblue; -fx-border-radius: 90;" text="Limpar" />
+               </HBox>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </left>
+</BorderPane>
